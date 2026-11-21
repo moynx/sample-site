@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f3ed" />
+  <meta name="description" content="Thoughtful layers for everyday rituals. Shop scarves and clothing from AUREL." />
+  <title>AUREL — Everyday, considered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">Complimentary shipping on orders over $100 <span>✳</span> Made for the in-between</div>
+  <header class="site-header">
+    <button class="icon-button menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    <nav class="nav-left"><a href="#shop">Shop all</a><a href="#shop" data-filter-link="Scarves">Scarves</a><a href="#shop" data-filter-link="Clothing">Clothing</a></nav>
+    <a class="wordmark" href="#">AUREL<span>STUDIO</span></a>
+    <div class="nav-right"><button class="text-button search-open" onclick="focusSearch()">Search</button><button class="icon-button" onclick="openCart()" aria-label="Open bag">Bag <span class="bag-count" id="bag-count">0</span></button><button class="icon-button admin-link" onclick="showAdmin()" aria-label="Open management panel">↗</button></div>
+  </header>
+  <main id="store-view">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">A softer kind of statement</p><h1>Made to move<br>with <em>you.</em></h1><p>Considered layers, natural textures, and the little things that make getting dressed feel like you.</p><a class="button button-dark" href="#shop">Explore the collection <span>↗</span></a><div class="hero-note"><span class="note-line"></span> Small batch · Thoughtfully made</div></div>
+      <div class="hero-image"><img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=1100&q=85" alt="Warm, textured neutral scarf and styling"/><div class="hero-stamp">THE<br>IN-BETWEEN<br>COLLECTION<br><span>№ 04 / 26</span></div><div class="image-caption">Pieces to keep close — all year round.</div></div>
+    </section>
+    <section class="ticker"><span>Wear what feels like you</span><b>✳</b><span>Natural by nature</span><b>✳</b><span>Made for the in-between</span><b>✳</b><span>Wear what feels like you</span></section>
+    <section class="shop-section" id="shop">
+      <div class="section-heading"><div><p class="eyebrow">The edit / 01</p><h2>Everyday, <em>considered.</em></h2></div><p>Soft layers, tactile details.<br>Made to be worn on repeat.</p></div>
+      <div class="shop-controls"><div class="filters" id="filters"><button class="filter active" data-filter="All">All pieces <span id="all-count"></span></button><button class="filter" data-filter="Scarves">Scarves</button><button class="filter" data-filter="Clothing">Clothing</button><button class="filter" data-filter="Accessories">Accessories</button></div><div class="controls-right"><input id="search" class="search-field" type="search" placeholder="Search the edit…" aria-label="Search products"/><select id="sort" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option></select></div></div>
+      <div id="product-grid" class="product-grid"></div><div id="empty-state" class="empty-state hidden">Nothing here just yet. Try another search.</div>
+      <div class="collection-footer"><span id="result-count"></span><a href="#">Back to the beginning ↑</a></div>
+    </section>
+    <section class="story"><div class="story-image"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85" alt="A considered everyday outfit"/></div><div class="story-copy"><p class="eyebrow">A note from the studio</p><h2>Keep it close.<br><em>Keep it longer.</em></h2><p>We believe the best pieces become part of your story. So we choose honest materials, make in small runs, and design for the everyday—not just the occasion.</p><a href="#shop" class="underlined-link">A little more about us <span>↗</span></a><div class="story-mark">A.</div></div></section>
+  </main>
+  <footer><a class="wordmark" href="#">AUREL<span>STUDIO</span></a><p>Pieces for the everyday, and everything between.</p><div class="footer-links"><a href="#shop">Shop</a><a href="mailto:hello@aurelstudio.example">Contact</a><a href="#admin" onclick="showAdmin()">Studio login</a></div><small>© 2026 AUREL STUDIO · Thoughtfully made</small></footer>
+  <div id="cart-overlay" class="overlay" onclick="overlayClose(event,'cart-overlay')"><aside class="cart-panel"><div class="panel-head"><div><p class="eyebrow">Your selection</p><h3>Your bag <span id="cart-title-count">(0)</span></h3></div><button class="close-button" onclick="closeCart()">×</button></div><div id="cart-items" class="cart-items"></div><div id="cart-empty" class="cart-empty"><span>✳</span><p>Your bag is taking a little breather.</p><button class="underlined-link" onclick="closeCart();document.querySelector('#shop').scrollIntoView()">Find your next favorite ↗</button></div><div id="cart-foot" class="cart-foot"><div class="subtotal"><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div><p>Shipping and taxes calculated at checkout.</p><button class="button button-dark button-full" onclick="openCheckout()">Continue to checkout <span>→</span></button><span class="secure-note">Secure checkout · Easy returns</span></div></aside></div>
+  <div id="checkout-overlay" class="overlay" onclick="overlayClose(event,'checkout-overlay')"><section class="checkout-modal"><div class="panel-head"><div><p class="eyebrow">Almost yours</p><h3>Delivery details</h3></div><button class="close-button" onclick="closeCheckout()">×</button></div><form id="checkout-form"><div class="form-grid"><label class="span-2">Full name<input required name="name" autocomplete="name" placeholder="Your name"/></label><label class="span-2">Email address<input required name="email" type="email" autocomplete="email" placeholder="you@example.com"/></label><label class="span-2">Street address<input required name="address" autocomplete="street-address" placeholder="Street and number"/></label><label>City<input required name="city" autocomplete="address-level2"/></label><label>Postal code<input required name="postal" autocomplete="postal-code"/></label><label class="span-2">Order note <small>(optional)</small><textarea name="note" rows="2" placeholder="Anything we should know?"></textarea></label></div><div class="checkout-total"><span>Order total</span><strong id="checkout-total">$0.00</strong></div><p class="payment-note">Demo checkout: this creates a pay-on-confirmation order. Connect a payment provider before accepting live payments.</p><button class="button button-dark button-full" type="submit">Place order <span>→</span></button></form></section></div>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="admin-view" class="admin-view hidden"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+
