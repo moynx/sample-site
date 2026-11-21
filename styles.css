@@ -9,4 +9,13 @@ html[dir="rtl"]{font-family:var(--sans)}html[dir="rtl"] body{font-family:var(--s
 @media(max-width:620px){.detail-layout{grid-template-columns:1fr;gap:10px}.detail-main-image{height:105vw;min-height:320px;max-height:540px}.detail-info{padding:10px 0}.detail-info h1{font-size:36px}.product-view{padding:20px 18px 55px}.detail-breadcrumb{font-size:9px;margin-bottom:15px}.related-products{padding-top:48px}.related-products .section-heading h2{font-size:27px}.related-products .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}html[dir="rtl"] .hero-copy{padding-right:0}.product-card{cursor:pointer}.hero-note{margin-top:28px}}
 /* Align numeric price, quantity and admin controls for Persian reading. */
 html[dir="rtl"] .admin-view{font-family:var(--sans)}html[dir="rtl"] .admin-brand{letter-spacing:0}html[dir="rtl"] .admin-label{letter-spacing:0}html[dir="rtl"] .admin-nav button{text-align:right}html[dir="rtl"] .admin-table th{text-align:right;letter-spacing:0}html[dir="rtl"] .admin-table td{text-align:right}html[dir="rtl"] .admin-page-title h1{line-height:1.5}html[dir="rtl"] .admin-page-title p,html[dir="rtl"] .admin-card-head small,html[dir="rtl"] .stat-label,html[dir="rtl"] .admin-table small{letter-spacing:0}html[dir="rtl"] .admin-user{flex-direction:row-reverse}
+:root{--sans:"Vazirmatn",Tahoma,sans-serif;--serif:"Vazirmatn",Tahoma,sans-serif}
+.hero h1,.section-heading h2,.story h2,.detail-info h1,.related-products h2,.admin-page-title h1,.admin-card-head h3,.panel-head h3,.login-card h2,.admin-modal h2,.cart-row h4,.cart-empty p,.product-title{font-family:"Vazirmatn",Tahoma,sans-serif;font-weight:500;font-style:normal;letter-spacing:0}
+.hero h1 em,.section-heading h2 em,.story h2 em{font-style:normal;font-weight:400}
+.ticker{font-family:"Vazirmatn",Tahoma,sans-serif;font-style:normal;font-weight:400}
+.hero h1,.section-heading h2,.story h2,.detail-info h1{line-height:1.4}
+.admin-view,button,input,select,textarea{font-family:"Vazirmatn",Tahoma,sans-serif}
+:root{--sans:"Estedad","Vazirmatn",Tahoma,sans-serif;--serif:"Estedad","Vazirmatn",Tahoma,sans-serif}
+.hero h1,.section-heading h2,.story h2,.detail-info h1,.related-products h2,.admin-page-title h1,.admin-card-head h3,.panel-head h3,.login-card h2,.admin-modal h2,.cart-row h4,.cart-empty p,.product-title{font-family:"Estedad","Vazirmatn",Tahoma,sans-serif}
+.admin-view,button,input,select,textarea{font-family:"Estedad","Vazirmatn",Tahoma,sans-serif}
 
